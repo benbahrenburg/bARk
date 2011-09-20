@@ -9,7 +9,7 @@
 //-----------------------------------------------------------
 String.prototype.trim = function() { return this.replace(/^\s\s*/, '').replace(/\s\s*$/, ''); };
 Ti.UI.setBackgroundColor('#000');
-
+Ti.UI.iPhone.statusBarStyle = Ti.UI.iPhone.StatusBar.OPAQUE_BLACK;
 //Set the application namspaces 
 var bark={ui:{},session:{needGeoRefresh:true,keys:{}},atlas:{ti:{}}};
 //Set what platform we're using as a property

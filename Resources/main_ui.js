@@ -313,5 +313,6 @@ exports.window=function(){
 		win.orientationModes = [Ti.UI.PORTRAIT];
 		Ti.UI.orientation = Ti.UI.PORTRAIT;
 	});	
+	
 	return win;
 };

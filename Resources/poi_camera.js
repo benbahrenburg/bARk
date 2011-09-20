@@ -856,7 +856,7 @@ exports.fetchCamera=function(){
 			        }
 			        //Now we can write the blob to the file
 			        f.write(e.blob);
-			        //File gets passed into the Gallery
+		        	//File gets passed into the Gallery
 			        Ti.Media.saveToPhotoGallery(f);
 			        //Alert the user we've saved
 					Ti.UI.createAlertDialog({title:'Saved',message:'This photo has been saved to your gallery'}).show();
@@ -866,7 +866,7 @@ exports.fetchCamera=function(){
 					Ti.Geolocation.removeEventListener('heading', exports.headingCallback);
 					Ti.Media.hideCamera();
 					Ti.App.fireEvent('win:set_portrait');
-					win.close({animated:false}); //Close without animation to avoid it jumping around		
+					win.close({animated:false}); //Close without animation to avoid it jumping around
 		     });		    	
 		    },
 		    cancel:function() {
