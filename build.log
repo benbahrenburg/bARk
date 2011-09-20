@@ -1,0 +1,112 @@
+Logfile initialized
+[INFO] logfile = /Users/benjamin/Projects/Ti/Demos/bARk/build.log
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/builder.py install bARk /Users/benjamin/androidSDK /Users/benjamin/Projects/Ti/Demos/bARk com.appworkbench.bark 4
+[INFO] Titanium SDK version: 1.8.0 (09/09/11 15:49 216ed79...)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 2 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.014873 seconds on emulator to get ready
+[DEBUG] com.appworkbench.bark installed? False
+[INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: /Users/benjamin/Projects/Ti/Demos/bARk/Resources/poi_camera.js => /Users/benjamin/Projects/Ti/Demos/bARk/build/android/bin/assets/Resources/poi_camera.js
+[TRACE] Generating Java Classes
+[DEBUG] Processing Android resource drawables
+[DEBUG] copying app icon: /Users/benjamin/Projects/Ti/Demos/bARk/build/android/bin/assets/Resources/Icon.png
+[DEBUG] generating theme.xml
+[DEBUG] found splash screen at /Users/benjamin/Projects/Ti/Demos/bARk/build/android/bin/assets/Resources/default.png
+[TRACE] Writing out AndroidManifest.xml
+[DEBUG] adding /Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/BarkActivity.java to javac build list
+[DEBUG] adding /Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/BarkAppInfo.java to javac build list
+[DEBUG] adding /Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/BarkApplication.java to javac build list
+[DEBUG] adding /Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/R.java to javac build list
+[DEBUG] Building Java Sources: "/Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/BarkActivity.java" "/Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/BarkAppInfo.java" "/Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/BarkApplication.java" "/Users/benjamin/Projects/Ti/Demos/bARk/build/android/gen/com/appworkbench/bark/R.java"
+[INFO] Compiling Android Resources... This could take some time
+[DEBUG] Android classes.dex built
+[DEBUG] creating unsigned apk: /Users/benjamin/Projects/Ti/Demos/bARk/build/android/bin/app-unsigned.apk
+[DEBUG] from resource zip => assets/Resources/Atlas/atlas.google.js
+[DEBUG] from resource zip => assets/Resources/Atlas/atlas.js
+[DEBUG] from resource zip => assets/Resources/Atlas/atlas.ti.js
+[DEBUG] from resource zip => assets/Resources/Images/Backgrounds/black_grad.png
+[DEBUG] from resource zip => assets/Resources/Images/Backgrounds/cloth_back.png
+[DEBUG] from resource zip => assets/Resources/Images/Backgrounds/cloth_back100.png
+[DEBUG] from resource zip => assets/Resources/Images/Backgrounds/landscape_moon.png
+[DEBUG] from resource zip => assets/Resources/Images/Backgrounds/portrait_moon.png
+[DEBUG] from resource zip => assets/Resources/Images/Logos/foursquare.png
+[DEBUG] from resource zip => assets/Resources/Images/Logos/twitter.png
+[DEBUG] from resource zip => assets/Resources/Images/Logos/yahoo_local.png
+[DEBUG] from resource zip => assets/Resources/Images/Logos/yelp.png
+[DEBUG] from resource zip => assets/Resources/Images/block_black.png
+[DEBUG] from resource zip => assets/Resources/Images/button_black.png
+[DEBUG] from resource zip => assets/Resources/Images/camera_tag_object.png
+[DEBUG] from resource zip => assets/Resources/Images/close_icon.png
+[DEBUG] from resource zip => assets/Resources/Images/dark_more.png
+[DEBUG] from resource zip => assets/Resources/Images/dark_more@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/dark_x-2.png
+[DEBUG] from resource zip => assets/Resources/Images/dark_x-2@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/eye_green32.png
+[DEBUG] from resource zip => assets/Resources/Images/eye_red32.png
+[DEBUG] from resource zip => assets/Resources/Images/icon_arrow_left.png
+[DEBUG] from resource zip => assets/Resources/Images/light_camera.png
+[DEBUG] from resource zip => assets/Resources/Images/light_camera@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/light_list.png
+[DEBUG] from resource zip => assets/Resources/Images/light_list@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/light_locate.png
+[DEBUG] from resource zip => assets/Resources/Images/light_locate@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/light_more.png
+[DEBUG] from resource zip => assets/Resources/Images/light_more@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/light_pictures.png
+[DEBUG] from resource zip => assets/Resources/Images/light_pictures@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/light_pin.png
+[DEBUG] from resource zip => assets/Resources/Images/light_pin@2x.png
+[DEBUG] from resource zip => assets/Resources/Images/map-pin.png
+[DEBUG] from resource zip => assets/Resources/Images/target2.png
+[DEBUG] from resource zip => assets/Resources/Soup/apikeys.js
+[DEBUG] from resource zip => assets/Resources/Soup/soup.foursquare.js
+[DEBUG] from resource zip => assets/Resources/Soup/soup.twitter.js
+[DEBUG] from resource zip => assets/Resources/Soup/soup.yahoolocal.js
+[DEBUG] from resource zip => assets/Resources/Soup/soup.yelp.js
+[DEBUG] from resource zip => assets/Resources/Default.png
+[DEBUG] from resource zip => assets/Resources/Icon.png
+[DEBUG] from resource zip => assets/Resources/app.js
+[DEBUG] from resource zip => assets/Resources/app.logic.js
+[DEBUG] from resource zip => assets/Resources/appicon.png
+[DEBUG] from resource zip => assets/Resources/helpers.js
+[DEBUG] from resource zip => assets/Resources/main_ui.js
+[DEBUG] from resource zip => assets/Resources/poi_camera.js
+[DEBUG] from resource zip => assets/Resources/poi_list.js
+[DEBUG] from resource zip => assets/Resources/poi_map.js
+[DEBUG] from resource zip => assets/Resources/poi_web.js
+[DEBUG] from resource zip => assets/Resources/search.js
+[DEBUG] from resource zip => assets/tiapp.xml
+[DEBUG] from resource zip => res/drawable/appicon.png
+[DEBUG] from resource zip => res/drawable/background.png
+[DEBUG] from resource zip => res/layout/titanium_tabgroup.xml
+[DEBUG] from resource zip => AndroidManifest.xml
+[DEBUG] from resource zip => resources.arsc
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/apache/Commons-NOTICE.txt
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/apache/HttpComponents-NOTICE.txt
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/apache/mime4j-NOTICE.txt
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/build.properties
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/background.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_18.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_check_buttonless_on_48.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_18.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_more_48.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_normal.9.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_pressed.9.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/btn_picker_selected.9.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/default_icon.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/titanium.jar => org/appcelerator/titanium/res/drawable/photoDefault.png
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/smalljs.jar => org/mozilla/javascript/resources/Messages.properties
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/smalljs.jar => org/mozilla/javascript/resources/Messages_fr.properties
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.js
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/binding.min.js
+[DEBUG] from JAR /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.20110909/android/modules/titanium-ui.jar => ti/modules/titanium/ui/widget/webview/json2.js
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 2 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.012715 seconds on emulator to get ready
+[INFO] Installing application on emulator
+[INFO] Application installed. Launch from drawer on Home Screen
