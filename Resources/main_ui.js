@@ -308,9 +308,6 @@ exports.window=function(){
 		findCoords(true);
 	}	
 
-	Ti.Android.currentActivity.addEventListener('resume',function(e){
-		Ti.API.info('In activity resume');		
-	});
 	Ti.App.addEventListener('win:set_portrait', function(e){
 		win.orientationModes = [];
 		win.orientationModes = [Ti.UI.PORTRAIT];
