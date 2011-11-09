@@ -456,6 +456,7 @@ function getSlider(){
 		backgroundColor:'transparent',
 		thumbImage:'./Images/eye_green32.png',
 		highlightedThumbImage:'./Images/eye_red32.png',
+		zIndex:1000,
 		min: 0,
 		max: 10,
 		value: 0,
