@@ -51,7 +51,7 @@ exports.AndroidHeader=androidHeader;
 
 exports.iPhoneHeader=iphoneHeader;
 
-exports.window=function(winTitle,link){
+exports.window=function(bark,winTitle,link){
 	var winConfig = {backgroundImage:'./Images/Backgrounds/cloth_back.png',title:winTitle};
 	var win = bark.helpers.makeWindow(winConfig);
 	var webViewTopPadding = 0;

@@ -27,7 +27,7 @@ function androidHeader(headerTitle){
 
 exports.AndroidHeader=androidHeader;
 
-exports.buildMapAnnotate=function(itemContent){
+exports.buildMapAnnotate=function(bark,itemContent){
 	
 	var vwImg = Ti.UI.createImageView({
 				top:bark.activeProvider.format.list.imageTop,
@@ -65,7 +65,7 @@ exports.buildMapAnnotate=function(itemContent){
 	return point;
 };
 
-exports.window=function(){
+exports.window=function(bark){
 	var winConfig = {backgroundImage:'./Images/Backgrounds/cloth_back.png',title:'bARK Map'};
 	var win = bark.helpers.makeWindow(winConfig);
 	
@@ -97,7 +97,7 @@ exports.window=function(){
 				var visitTitle = (evt.annotation)?evt.annotation.itemTitle:'';	
 				if(visitUrl!==null){
 					if(visitUrl.trim().length>0){
-						var web = bark.poiWeb.window(visitTitle,visitUrl);
+						var web = bark.poiWeb.window(bark,visitTitle,visitUrl);
 						web.open({modal:true});
 					}
 				}
@@ -117,7 +117,7 @@ exports.window=function(){
 		mapView.setLocation({latitude:bark.session.location.latitude, longitude:bark.session.location.longitude, latitudeDelta:0.01, longitudeDelta:0.01});
 		//Start adding map pins	
 		for (var iLoop=0; iLoop < iLength; iLoop++){
-			mapView.addAnnotation(exports.buildMapAnnotate(content[iLoop]));
+			mapView.addAnnotation(exports.buildMapAnnotate(bark,content[iLoop]));
 		}	
 	});	
 	return win;	

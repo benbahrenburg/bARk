@@ -28,7 +28,7 @@ function androidHeader(headerTitle){
 
 exports.AndroidHeader=androidHeader;
 
-exports.window=function(){
+exports.window=function(bark){
 	var _providerIndex=0;
 	var _searchTerm='';
 	var yellow='#ded32a';

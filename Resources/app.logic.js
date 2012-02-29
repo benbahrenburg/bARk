@@ -128,7 +128,7 @@ bark.moduleManager=(function (context) {
 				bark.poiAR = require('poi_camera');
 			 }
 			Ti.App.fireEvent('app:start_loading',{msg:'Loading Camera. Please Wait...'});
-			 bark.poiAR.fetchCamera();
+			 bark.poiAR.fetchCamera(bark);
 			 				
 			return;
 		}
@@ -136,7 +136,7 @@ bark.moduleManager=(function (context) {
 		if(pageName==='list'){
 			if((bark.poiList===undefined)||(bark.poiList===null)){
 				bark.poiList = require('poi_list');
-				bark.ui.winList = bark.poiList.window();
+				bark.ui.winList = bark.poiList.window(bark);
 			}
 			bark.pageManager(bark.ui.winList);	
 		}
@@ -144,7 +144,7 @@ bark.moduleManager=(function (context) {
 		if(pageName==='map'){
 			if((bark.poiMap===undefined)||(bark.poiMap===null)){
 				bark.poiMap = require('poi_map');
-				bark.ui.winMap = bark.poiMap.window();
+				bark.ui.winMap = bark.poiMap.window(bark);
 			}		
 			bark.pageManager(bark.ui.winMap);		
 		}		

@@ -29,6 +29,7 @@ var _bearingChanged=true;
 var _timerId = null;
 var _isSimulator=false;
 var _infoView=null;
+var _bark=null;
 
 function setDeviceBearing(bearing){
 	_deviceBearing=bearing;
@@ -131,7 +132,7 @@ exports.fetchDetailView = function(){
 		font: {fontSize: 24, fontFamily:"HelveticaNeue-Bold"}
 	});
 	
-	if(!bark.session.isAndroid){
+	if(!_bark.session.isAndroid){
 		vwBackground.add(vwCloseImg);		
 	}
 
@@ -141,9 +142,9 @@ exports.fetchDetailView = function(){
 		vwBackground.visible=false;
 	});	
 
-	var offset = (bark.session.isAndroid)? 50 : 100;
+	var offset = (_bark.session.isAndroid)? 50 : 100;
 	if(_isSimulator){
-		offset = (bark.session.isAndroid)? 45 : 50;
+		offset = (_bark.session.isAndroid)? 45 : 50;
 	}
 	var webView = Ti.UI.createWebView({
 		top:offset,
@@ -268,7 +269,7 @@ exports.createPlace=function(contentItem,itemOpacity,itemScale,tmatrix,distanceF
 		contentItem:contentItem,
 		backgroundColor:'#000',
 		borderColor:yellow,
-		borderRadius:(bark.session.isAndroid)? 0 : 5
+		borderRadius:(_bark.session.isAndroid)? 0 : 5
 	});
 	
 	var nameLabel = Ti.UI.createLabel({
@@ -285,7 +286,7 @@ exports.createPlace=function(contentItem,itemOpacity,itemScale,tmatrix,distanceF
 	vwItem.add(nameLabel);
 
 	var contentMore=contentItem.text;
-	if(bark.activeProvider.format.list.secondLabel=='address'){
+	if(_bark.activeProvider.format.list.secondLabel=='address'){
 		contentMore=contentItem.address;
 	}		
 
@@ -308,7 +309,7 @@ exports.createPlace=function(contentItem,itemOpacity,itemScale,tmatrix,distanceF
 		if((contentItem.site_link!==undefined)&&(contentItem.site_link!==null)){
 			if(contentItem.site_link.trim().length>0){
 				var contentMore=contentItem.text;
-				if(bark.activeProvider.format.list.secondLabel=='address'){
+				if(_bark.activeProvider.format.list.secondLabel=='address'){
 					contentMore=contentItem.address;
 				}
 				exports.mgtInfoWindow(contentItem.name,contentMore,contentItem.site_link,vwItem.distance);
@@ -468,11 +469,11 @@ function getSlider(){
 
 exports.updateTarget=function(targetArea,contentCount) {	
 	for (var i = 0; i < contentCount; i++) {
-		var dist = convertMeters2KM(bark.atlas.Math.distanceBetweenCoords(bark.session.location.latitude, 
-														 bark.session.location.longitude, 
-														 bark.session.searchResults.content[i].latitude, 		
-														 bark.session.searchResults.content[i].longitude));
-		var horizAngle = Bearing(bark.session.location, bark.session.searchResults.content[i]);	
+		var dist = convertMeters2KM(_bark.atlas.Math.distanceBetweenCoords(_bark.session.location.latitude, 
+														 _bark.session.location.longitude, 
+														 _bark.session.searchResults.content[i].latitude, 		
+														 _bark.session.searchResults.content[i].longitude));
+		var horizAngle = Bearing(_bark.session.location, _bark.session.searchResults.content[i]);	
 		var ro = 28 * dist / _maxDistance;
 		var centerX = 28 + ro * Math.sin(horizAngle);
 		var centerY = 28 - ro * Math.cos(horizAngle);
@@ -508,7 +509,7 @@ exports.fetchSimulatorWindow=function(){
 	}
 
 	//Set the background to something more exciting
-	if(bark.session.isAndroid){
+	if(_bark.session.isAndroid){
 		win.backgroundImage='./Images/Backgrounds/landscape_moon.png';
 	}else{
 		win.backgroundImage='./Images/Backgrounds/portrait_moon.png';
@@ -525,7 +526,7 @@ function iOSLayout(onScreen){
 	var viewAngleX = (15).toRad();	//This is an estimation of the total viewing angle that you see.
 	for (var iLoop= 0; iLoop < onScreen.length; iLoop++) {			
 		var totalDeep 		= 1;	//This variable determines how var to layer the items on the screen	
-		var horizAngle1 	= Bearing(bark.session.location, onScreen[iLoop].location);
+		var horizAngle1 	= Bearing(_bark.session.location, onScreen[iLoop].location);
 		var relAngleH1 		= horizAngle1 - _deviceBearing;
 		var xDelta1 		= ComputeXDelta(relAngleH1,viewAngleX);
 		var viewCenterX1	= xDelta1 * centerX + centerX;	//This is related to the global centerX & Y
@@ -576,7 +577,7 @@ function AndroidLayout(onScreen){
 	for (var iLoop= 0; iLoop < screenLength; iLoop++) {
 			zIndexCounter ++;
 			var totalDeep 		= 1;
-			var horizAngle1 	= Bearing(bark.session.location, onScreen[iLoop].location);
+			var horizAngle1 	= Bearing(_bark.session.location, onScreen[iLoop].location);
 			var relAngleH1 		= horizAngle1 - _deviceBearing;
 			var xDelta1 		= ComputeXDelta(relAngleH1,viewAngleX);
 			var viewCenterX1	= xDelta1 * centerX + centerX;	//This is related to the global centerX & Y
@@ -632,7 +633,7 @@ function buildOnScreen(places){
 	var viewAngleX = (15).toRad();	//This is an estimation of the total viewing angle that you see.
 		
 	for (var iLoop = 0; iLoop < iLength; iLoop++) {
-		var horizAngle = Bearing(bark.session.location, bark.session.searchResults.content[iLoop]);
+		var horizAngle = Bearing(_bark.session.location, _bark.session.searchResults.content[iLoop]);
 		var relAngleH = horizAngle - _deviceBearing;
 		
 		//This handy code cuts out a lot of overprocessing
@@ -673,8 +674,8 @@ exports.fetchPlace=function(itemContent){
 	 * Based on the distance we set the opacity & scale of the entire location.
 	 *  This is done based on the distance of the items in an if then statement.
 	*/
-	var distance 	=  bark.atlas.Math.distanceBetweenCoords(bark.session.location.latitude, 
-														 bark.session.location.longitude, 
+	var distance 	=  _bark.atlas.Math.distanceBetweenCoords(_bark.session.location.latitude, 
+														 _bark.session.location.longitude, 
 														 itemContent.latitude, 
 														 itemContent.longitude);
 	var distanceKM=convertMeters2KM(distance);												 
@@ -682,7 +683,7 @@ exports.fetchPlace=function(itemContent){
 	var itemScale 	= ((1/distanceKM) > 0.9 ) ? 0.75 : (1/distanceKM).toFixed(2);	//Scale is set here, smaller based on distance.
 	var tmatrix = Ti.UI.create2DMatrix().scale(itemScale);				//We set the scale here to avoid "flashes" when rotating	
 
-	var horizAngle = Bearing(bark.session.location, itemContent);
+	var horizAngle = Bearing(_bark.session.location, itemContent);
 													
 	//This little section here will help with the poltting of our radar view.
 	//We need to establish the max distance for the plotting to work properly.
@@ -697,12 +698,13 @@ exports.fetchPlace=function(itemContent){
 };
 exports.makeLandscape=null;
 
-exports.fetchCamera=function(){
+exports.fetchCamera=function(bark){
 	var updateTimer=null;
 	var bearingListenerAdded = false;
 	var bearingChanged = true;
 	var places=[];
 	var place = null;	
+	_bark=bark; //Remember for later, we need this as globals changed in 1.8+
 	
 	//Unfortunately Android takes awhile
 	if(bark.session.isAndroid){

@@ -26,13 +26,16 @@ function androidHeader(headerTitle){
 	return header;	
 };
 
-function buildRow(itemIndex,itemContent,provider){
+function buildRow(bark,itemIndex,itemContent,provider){
 	var yellow='#ded32a';
-	var row = Ti.UI.createTableViewRow({height:provider.format.list.rowHeight,selectedBackgroundColor:'#999', hasChild:false});
+	var row = Ti.UI.createTableViewRow({height:provider.format.list.rowHeight,selectedBackgroundColor:'#999', 
+		followUrl : itemContent.site_link,
+		followTitle :itemContent.name,	
+		hasChild:false
+	});
 	var vwRow = Ti.UI.createView({left:5,right:5,backgroundImage:'./Images/block_black.png',top:5,bottom:5});
 	var vwMore = Ti.UI.createView({top:25,right:5,width:25,height:25,backgroundImage:'./Images/light_more.png'});
-	row.followUrl = itemContent.site_link;
-	row.followTitle = itemContent.name;
+
 	vwRow.add(vwMore);
 	if(itemContent.image_url===null){
 		itemContent.image_url='./Images/light_pictures.png';
@@ -118,16 +121,16 @@ function buildRow(itemIndex,itemContent,provider){
 	return row;		
 };
 
-function fetchTableViewData(searchResults,provider){
+function fetchTableViewData(bark,searchResults,provider){
 	var data = [];
 	var iLength=searchResults.length;
 	 for (var iLoop=0;iLoop < iLength;iLoop++){
-	 	data.push(buildRow(iLoop,searchResults[iLoop],provider));
+	 	data.push(buildRow(bark,iLoop,searchResults[iLoop],provider));
 	 }	 
 	 return data;
 };
 
-exports.window=function(){
+exports.window=function(bark){
 
 	var winConfig = {backgroundImage:'./Images/Backgrounds/cloth_back.png',title:'bARK Search'};
 	var win = bark.helpers.makeWindow(winConfig);
@@ -149,14 +152,14 @@ exports.window=function(){
 	tableView.addEventListener('click', function(e){
 		if(e.rowData.followUrl!==null){
 			if(e.rowData.followUrl.trim().length>0){
-				var web = bark.poiWeb.window(e.rowData.followTitle,e.rowData.followUrl);
+				var web = bark.poiWeb.window(bark,e.rowData.followTitle,e.rowData.followUrl);
 				web.open({modal:true});
 			}
 		}
 	});
 
 	win.addEventListener('open', function(e){
-		var tableData = fetchTableViewData(bark.session.searchResults.content,bark.activeProvider);	
+		var tableData = fetchTableViewData(bark,bark.session.searchResults.content,bark.activeProvider);	
 		tableView.setData(tableData);
 	});	
 		
